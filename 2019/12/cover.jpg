@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60797448-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-60797448-1');
+    </script>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>cover.jpg | 12 | 2019 | data | public | Sambhashana Sandesha</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Javascript calls
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/navbar.css?v=2.0">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/secondary-navbar.css?v=2.0">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/homepage.css?v=2.0">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/profile.css?v=2.0">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/archive.css?v=2.0">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/article.css?v=2.0">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/form.css?v=2.0">
+    <link rel="stylesheet" href="https://sambhashanasandesha.in/public/css/general.css?v=2.0">
+    <script type="text/javascript">
+        var base_url = "https://sambhashanasandesha.in/";
+        var nav_archive_volume = "सम्पुटः";
+        var nav_archive_issue = "सञ्चिका";
+    </script>
+    <script type="text/javascript">var base_url = "https://sambhashanasandesha.in/";</script>
+
+    <style type="text/css">
+
+.mainpage .full-width-card h3.author.by:before{
+ content: '— ';
+ margin-right: 2px;
+ margin-left: 20px;
+}
+.mainpage .full-width-card h3.author span:not(:first-of-type):last-of-type:before{
+ content: ' ,  ';
+}
+
+.mainpage .full-width-card h3.fullText span:not(:first-of-type):last-of-type:before{
+ content: ' ,  ';
+}
+
+</style>
+    <!-- Fonts
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Laila:400&amp;subset=devanagari" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Halant:300,400,500,600,700|Martel:200,300,400,600,700,800,900&amp;subset=devanagari" rel="stylesheet">
+    
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="https://sambhashanasandesha.in/public/images/favicon.png">
+</head>
+<body>
+
+    <!-- Navigation
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container navbar-head">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1>सम्भाषण<span class="saffron">सन्देशः</span></h1>
+            </div>
+        </div>
+    </div>
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active"><a class="nav-link" href="https://sambhashanasandesha.in/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://sambhashanasandesha.in/About">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://subscriptions.sambhashanasandesha.in/subscription/show">Subscribe</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://sambhashanasandesha.in/listing/structure/Journal?select=year">Archives</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://subscriptions.sambhashanasandesha.in/subscription/index/?type=in">Login</a></li>
+            </ul>
+            </ul>
+        </div>
+    </nav>
+<!--     <div class="row">
+        <div class="col-md-12">
+            <div id="cd-sec-nav">
+                <a class="cd-sec-nav-trigger">Menu<span></span></a>
+                <nav id="cd-sec-main-nav">
+                    <ul>
+                        <li><a class="years" href="https://sambhashanasandesha.in/listing/structure/Journal?select=year"><i class="fas fa-calendar-alt"></i> सम्पुटाः</a></li>
+                        <li><a class="titles" href="https://sambhashanasandesha.in/articles/all/अ"><i class="fas fa-copy"></i> लेखाः</a></li>
+                        <li><a class="authors" href="https://sambhashanasandesha.in/listing/authors/अ"><i class="fa fa-users"></i> लेखकाः</a></li>
+                        <li><a class="features" href="https://sambhashanasandesha.in/listing/category/feature"><i class="fa fa-tags"></i> प्रधानविभागाः</a></li>
+                        <li><a class="search" href="https://sambhashanasandesha.in/search/index"><i class="fa fa-search"></i> अन्वेषणम्</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div> -->
+    <!-- End Navigation
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container-fluid dynamic-page offset-sec-nav">
+	<div class="row align-items-top justify-content-center">
+		<div class="col-md-12 p-0">
+<h4 class="archiveTitle english">404</h4>
+<h1 class="title english">error!</h1>
+<p class="text-center english">The page your are looking for can not be found!<br />Please check the link or use the navigation bar at the top.</p>
+		</div>
+	</div>
+</div>
+    <div class="container footer"><!-- container -->
+        <div class="row justify-content-center"><!-- row -->
+            <div class="col-md text-center">
+                <p><small>© 2019 Sambhashana Sandesha, All Rights Reserved<!--  | Design, Developed and Maintained by <a href="https://srirangadigital.com/">Sriranga Digital --></small></p>
+            </div>
+        </div>
+    </div>
+    <!-- End Main page layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- Javascript calls
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="https://sambhashanasandesha.in/public/js/common.js?v=2.0"></script>
+</body>
+</html>
