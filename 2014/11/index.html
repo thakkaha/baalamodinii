@@ -90,7 +90,7 @@
         let htmlString = '';
         for (let file of data) {
           if(file.name !== "index.html" && file.name !== "cover.jpg"){
-            htmlString += `<a href="${file.name}" class="col-6 col-md-2 archive-structure-pictorial">${file.html_url}<div class="card sanskrit-english"><img class="img-fluid" src="cover.jpg" alt="Cover page" /><p></p></div></a>`;
+            htmlString += `<a href="${file.name}" class="col-6 col-md-2 archive-structure-pictorial" title="${file.html_url}"><div class="card sanskrit-english"><img class="img-fluid" src="cover.jpg" alt="Cover page" /><p>${file.html_url}</p></div></a>`;
           }
         }
         document.getElementById('stories').innerHTML += htmlString;
