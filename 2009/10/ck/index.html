@@ -7,9 +7,11 @@
     <style> 
        body{ background-color: ivory; }
 canvas{border:1px solid red;}
+#lyrics{margin-left:3em;font: 700 2.3em arial,sans-serif;color:#0ff;text-align:center;}
     </style>  
 <script type="text/javascript" src="data.json"></script>
 <script> 
+
 var imgs = [];
 var imageURLs = [];
 var mydata = JSON.parse(data);
@@ -33,14 +35,17 @@ function loadAllImages(callback) {
 </script>
 </head> 
 <body> 
-<video controls onplay="loadAllImages(fade);">
+<audio id="player" controls onplay="myAudioStarted=true;loadAllImages(fade);cueChange();">
   <source src="kathaa.mp3" type="audio/mpeg">
-  <track kind="subtitles" label="English subtitles" src="kathaa.vtt" srclang="sa" default></track>
+  <track id="trk" kind="subtitles" label="kathaa" src="kathaa.vtt" srclang="sa" default></track>
   Your browser does not support the audio tag.
-</video>
+</audio>
+<div id="lyrics"></div>
 <br>
     <canvas id="main" width=1040 height=780></canvas>
 	<script>
+	var myAudioStarted = false;
+	var myAudio = document.getElementById('player');
 var ctx = main.getContext('2d');
 var last = main.cloneNode(true).getContext('2d');
 var next = main.cloneNode(true).getContext('2d');
@@ -84,7 +89,29 @@ if (!done){
    else requestAnimationFrame(fade);
 }
    }
+/*
+window.onfocus = function() { 
+if (myAudioStarted && myAudio.paused)
+ myAudio.play(); 
+};
+window.onblur = function() { 
+if (myAudio.duration > 0 && !myAudio.paused) 
+myAudio.pause(); 
+};
+*/
 //loadAllImages(fade);
+
+var textTrack = myAudio.textTracks[0];
+var lyrics = document.getElementById('lyrics');
+// When cue value changes run your code
+textTrack.oncuechange = function(e) {
+  var cue = this.activeCues[0];
+  if(cue){
+    lyrics.innerHTML = cue.text;
+  }
+}
+
+
 </script> 
 </body> 
 </html>
