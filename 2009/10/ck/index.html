@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+  
+<html lang="en"> 
+<head> 
+   <meta charset="utf-8"> 
+   <title>untitled</title> 
+    <style> 
+       body{ background-color: ivory; }
+canvas{border:1px solid red;}
+    </style>  
+<script type="text/javascript" src="data.json"></script>
+<script> 
+var imgs = [];
+var imageURLs = [];
+var mydata = JSON.parse(data);
+for (var j = 0; j < mydata.length+1; j++) { 
+imageURLs.push(j+".jpg");
+}
+var imagesOK = 0;
+function loadAllImages(callback) {
+  for (var i = 0; i < imageURLs.length; i++) {
+    var img = new Image();
+    imgs.push(img);
+    img.onload = function() {
+      imagesOK++;
+      if (imagesOK >= imageURLs.length) {
+        callback();
+      }
+    };
+    img.src = imageURLs[i];
+  }
+}
+</script>
+</head> 
+<body> 
+<video controls onplay="loadAllImages(fade);">
+  <source src="kathaa.mp3" type="audio/mpeg">
+  <track kind="subtitles" label="English subtitles" src="kathaa.vtt" srclang="sa" default></track>
+  Your browser does not support the audio tag.
+</video>
+<br>
+    <canvas id="main" width=1040 height=780></canvas>
+	<script>
+var ctx = main.getContext('2d');
+var last = main.cloneNode(true).getContext('2d');
+var next = main.cloneNode(true).getContext('2d');
+
+var current = 0;
+var op = 1;
+var done=0;
+
+function nextImage() {
+//console.log("in nextimg");
+  current++;
+  if (current >= imgs.length - 1) 
+  { 
+  done = 1;
+  //console.log("done");
+  }
+  op = 1;
+  fade();
+}
+
+function fade() {
+  op -= .01;
+  
+  last.clearRect(0, 0, main.width, main.height);
+  last.globalAlpha = op;
+  last.drawImage(imgs[current], 0, 0);
+if (!done){
+  next.clearRect(0, 0, main.width, main.height);
+  next.globalAlpha = 1 - op;
+  next.drawImage(imgs[(current + 1) % (imgs.length)], 0, 0);
+
+  ctx.clearRect(0, 0, main.width, main.height);
+  ctx.drawImage(last.canvas, 0, 0);
+  ctx.drawImage(next.canvas, 0, 0);
+
+//  if (op <= 0) nextImage() //{ stid=setTimeout(nextImage, mydata[current]); console.log(stid+"--"+mydata[current]);}
+   if (op <= 0) 
+   { stid=setTimeout(nextImage, mydata[current]); 
+   //console.log(stid+"--"+mydata[current]);
+   }
+   else requestAnimationFrame(fade);
+}
+   }
+//loadAllImages(fade);
+</script> 
+</body> 
+</html>
