@@ -193,7 +193,7 @@ myAudio.pause();
 //loadAllImages(fade);
 
 var textTrack = myAudio.textTracks[0];
-var lyrics = document.getElementById('lyrics');
+var lyrics = document.getElementsByClassName("title")[0];
 // When cue value changes run your code
 textTrack.oncuechange = function(e) {
   var cue = this.activeCues[0];
