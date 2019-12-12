@@ -49,10 +49,25 @@
 }
 canvas{border:1px solid red;}
 #lyrics{margin-left:3em;font: 700 2.3em arial,sans-serif;text-align:center;}
+@keyframes shade {
+  0% { filter:grayscale(0%); }
+  10% { filter:grayscale(20%); }
+  30% { filter:grayscale(60%); }
+  50% { filter:grayscale(100%); }
+  70% { filter:grayscale(60%); }
+  90% { filter:grayscale(20%); }
+  100% { filter:grayscale(0%); }
+}
 #pic{
+  animation: shade 5s;
+  animation-iteration-count: infinite;
 max-width: 100%; 
 display:block; 
 height: auto;
+ transition: filter 2s;
+}
+#pic:hover{
+ filter:grayscale(100%);
 }
 audio{
   width:100%;
@@ -83,8 +98,11 @@ audio{
     <div class="row">
         <div class="col-md-12">
             <a href="../../../"><h4 class="archiveTitle" style="text-decoration:underline">सङ्ग्रहः</h4></a>
+			<figure>
+			<figcaption id="illus"></figcaption>
 			<img id="pic" src="0.jpg">
-            <h2 class="title" style="text-align: center;"> चित्रकथा </h2>
+            </figure>
+			<h2 class="title" style="text-align: center;"> चित्रकथा </h2>
         </div>
     </div>
 </div>
@@ -118,7 +136,7 @@ audio{
 function showfn(obj)
 {
 document.getElementById("pic").src=obj.src;
-console.log(obj.title);
+document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
 }
 	var myAudio = document.getElementById('player');
 var textTrack = myAudio.textTracks[0];
