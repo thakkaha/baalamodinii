@@ -172,7 +172,11 @@ audio{
 	
 function showfn(obj)
 {
-document.getElementById("pic").src=obj.src;
+	$("#pic").fadeOut(400, function() {
+            $("#pic").attr('src',obj.src);
+        })
+        .fadeIn(400);
+//document.getElementById("pic").src=obj.src;
 document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
 }
 	var myAudio = document.getElementById('player');
