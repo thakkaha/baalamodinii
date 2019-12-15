@@ -29,6 +29,15 @@
     <link rel="stylesheet" href="../../../css/article.css?v=2.0">
     <link rel="stylesheet" href="../../../css/form.css?v=2.0">
     <link rel="stylesheet" href="../../../css/general.css?v=2.0">
+	<link rel="preload" as="audio" href="kathaa.mp3">
+	<link rel="preload" as="image" href="1.jpg">
+	<link rel="preload" as="image" href="2.jpg">
+	<link rel="preload" as="image" href="3.jpg">
+	<link rel="preload" as="image" href="4.jpg">
+	<link rel="preload" as="image" href="5.jpg">
+	<link rel="preload" as="image" href="6.jpg">
+	<link rel="preload" as="image" href="7.jpg">
+	<link rel="preload" as="image" href="8.jpg">
     <script type="text/javascript">
         var base_url = "https://sambhashanasandesha.in/";
         var nav_archive_volume = "सम्पुटः";
@@ -127,7 +136,7 @@ audio{
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="row gray-back">
-			    <audio id="player" controls>
+			    <audio id="player" controls preload="auto">
   <source src="kathaa.mp3" type="audio/mpeg">
   <track id="trk" kind="subtitles" label="kathaa" src="kathaa.vtt" srclang="sa" default></track>
   Your browser does not support the audio tag.
@@ -150,9 +159,24 @@ audio{
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript" src="../../../js/common.js?v=2.0"></script>
 <script> 
+		document.getElementById("pic").src="8.jpg";
+		document.getElementById("pic").src="7.jpg";
+		document.getElementById("pic").src="6.jpg";
+		document.getElementById("pic").src="5.jpg";
+		document.getElementById("pic").src="4.jpg";
+		document.getElementById("pic").src="3.jpg";
+		document.getElementById("pic").src="2.jpg";
+		document.getElementById("pic").src="1.jpg";
+		document.getElementById("pic").src="0.jpg";
+		
+	
 function showfn(obj)
 {
-document.getElementById("pic").src=obj.src;
+	$("#pic").fadeOut(400, function() {
+            $("#pic").attr('src',obj.src);
+        })
+        .fadeIn(400);
+//document.getElementById("pic").src=obj.src;
 document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
 }
 	var myAudio = document.getElementById('player');
