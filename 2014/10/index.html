@@ -90,7 +90,7 @@
         let htmlString = '';
         for (let file of data) {
           if(!hiddenfiles.includes(file.name)){
-            htmlString += `<a href="${file.name}" class="col-6 col-md-2 archive-structure-pictorial" title="${file.html_url}"><div class="card sanskrit-english"><img class="img-fluid" src="main.png" alt="Cover page" /><p>${file.name}</p></div></a>`;
+            htmlString += `<a href="${file.name}" class="col-6 col-md-2 archive-structure-pictorial" title="${file.html_url}"><div class="card sanskrit-english"><img class="img-fluid" src="${file.name}.png" alt="${file.name}" /><p>${file.name}</p></div></a>`;
           }
         }
         document.getElementById('stories').innerHTML += htmlString;
