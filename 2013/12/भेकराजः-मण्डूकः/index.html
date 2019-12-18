@@ -54,26 +54,9 @@
 .mainpage .full-width-card h3.fullText span:not(:first-of-type):last-of-type:before{
  content: ' ,  ';
 }
-canvas{border:1px solid red;}
+
 #lyrics{margin-left:3em;font: 700 2.3em arial,sans-serif;text-align:center;}
-@keyframes shade {
-  0% { filter:grayscale(0%); }
-  10% { filter:grayscale(20%); }
-  30% { filter:grayscale(60%); }
-  50% { filter:grayscale(100%); }
-  70% { filter:grayscale(60%); }
-  90% { filter:grayscale(20%); }
-  100% { filter:grayscale(0%); }
-}
-@keyframes move {
-  0% {
-    transform-origin: bottom left;
-    transform: scale(1.0);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
+
 .image-wrap {
   width: 100%;
   margin: 0 auto;
@@ -81,9 +64,6 @@ canvas{border:1px solid red;}
   position: relative;
 }
 #pic{
-  animation: move 30s ease;
-  /* animation: shade 5s;*/
-   animation-iteration-count: infinite; 
 max-width: 100%; 
 display:block; 
 height: auto;
@@ -114,7 +94,7 @@ audio{
         <div class="col-md-12" align="center">
 			<figure class="image-wrap">
 			<figcaption id="illus"></figcaption>
-			<img id="pic" src="0.jpg">
+			<img id="pic">
             </figure>
 			<br>
 			<h2 class="title" style="text-align: center;"> चित्रकथा </h2>
@@ -148,29 +128,17 @@ audio{
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript" src="../../../js/common.js?v=2.0"></script>
 <script> 
-		document.getElementById("pic").src="12.jpg";
-		document.getElementById("pic").src="11.jpg";
-		document.getElementById("pic").src="10.jpg";
-		document.getElementById("pic").src="9.jpg";
-		document.getElementById("pic").src="8.jpg";
-		document.getElementById("pic").src="7.jpg";
-		document.getElementById("pic").src="6.jpg";
-		document.getElementById("pic").src="5.jpg";
-		document.getElementById("pic").src="4.jpg";
-		document.getElementById("pic").src="3.jpg";
-		document.getElementById("pic").src="2.jpg";
-		document.getElementById("pic").src="1.jpg";
-		document.getElementById("pic").src="0.jpg";
-		
+		var pic=document.getElementById("pic");
+		pic.src="0.jpg";
 	
 function showfn(obj)
 {
-	$("#pic").fadeOut(400, function() {
+	$("#pic").fadeOut(200, function() {
             $("#pic").attr('src',obj.src);
         })
-        .fadeIn(400);
+        .fadeIn(300);
 //document.getElementById("pic").src=obj.src;
-document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
+//document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
 }
 	var myAudio = document.getElementById('player');
 var textTrack = myAudio.textTracks[0];
