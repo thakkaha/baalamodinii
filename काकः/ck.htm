@@ -138,6 +138,11 @@ var mytrkevt = function(event) {
 	 break;
 	 }
 	 textTrack = myAudio.textTracks[curtrk];
+	 textTrack.oncuechange = function(e) {
+  var cue = this.activeCues[0];
+  if(cue){
+    lyrics.innerHTML = cue.text;
+  }
 };
 	var myAudio = document.getElementById('player');
 	myAudio.textTracks.onchange = mytrkevt;
