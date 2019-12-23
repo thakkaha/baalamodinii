@@ -137,6 +137,7 @@ var mytrkevt = function(event) {
      curtrk = i;
 	 break;
 	 }
+	 textTrack = myAudio.textTracks[curtrk];
 };
 	var myAudio = document.getElementById('player');
 	myAudio.textTracks.onchange = mytrkevt;
