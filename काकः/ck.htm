@@ -139,7 +139,7 @@ var mytrkevt = function(event) {
 	 }
 };
 	var myAudio = document.getElementById('player');
-	var myAudio.textTracks.onchange = mytrkevt;
+	myAudio.textTracks.onchange = mytrkevt;
 var textTrack = myAudio.textTracks[curtrk];
 var lyrics = document.getElementsByClassName("title")[0];
 // When cue value changes run your code
