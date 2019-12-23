@@ -124,8 +124,8 @@ audio{
             <div class="row gray-back">
 			    <audio id="player" controls preload="auto">
   <source src="kathaa.mp3" type="audio/mpeg">
-  <track id="trk" kind="subtitles" label="kathaa" src="kathaa.vtt" srclang="sa" default></track>
-  <track id="trk" kind="subtitles" label="ગુજરાતી gujaraatii" src="guj.vtt" srclang="gu" default></track>
+  <track id="trk" kind="subtitles" label="देवनागरी" src="sa.vtt" srclang="sa" default></track>
+  <track id="trk" kind="subtitles" label="ગુજરાતી gujaraatii" src="gu.vtt" srclang="gu"></track>
   Your browser does not support the audio tag.
 </audio>
 
@@ -159,7 +159,7 @@ function showfn(obj)
 //document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
 }
 	var myAudio = document.getElementById('player');
-var textTrack = myAudio.textTracks[0];
+var textTrack = myAudio.textTracks[1];
 var lyrics = document.getElementsByClassName("title")[0];
 // When cue value changes run your code
 textTrack.oncuechange = function(e) {
