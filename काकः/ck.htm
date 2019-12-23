@@ -129,8 +129,18 @@ function showfn(obj)
         })
         .fadeIn(300);
 }
+var curtrk=0;
+var mytrkevt = function(event) {
+  for (i=0;i<event.target.length;i++)
+   if (event.target[i].mode == "showing")
+    {
+     curtrk = i;
+	 break;
+	 }
+};
 	var myAudio = document.getElementById('player');
-var textTrack = myAudio.textTracks[1];
+	var myAudio.textTracks.onchange = mytrkevt;
+var textTrack = myAudio.textTracks[curtrk];
 var lyrics = document.getElementsByClassName("title")[0];
 // When cue value changes run your code
 textTrack.oncuechange = function(e) {
