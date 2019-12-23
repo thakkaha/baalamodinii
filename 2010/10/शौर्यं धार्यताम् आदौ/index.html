@@ -116,7 +116,10 @@ audio{
             <div class="row gray-back">
 			    <audio id="player" controls preload="auto">
   <source src="kathaa.mp3" type="audio/mpeg">
-  <track id="trk" kind="subtitles" label="kathaa" src="kathaa.vtt" srclang="sa" default></track>
+  <track id="trk" kind="subtitles" label="देवनागरी" src="sa.vtt" srclang="sa" default></track>
+  <track id="trk" kind="subtitles" label="ગુજરાતી gujaraatii" src="gu.vtt" srclang="gu"></track>
+  <track id="trk" kind="subtitles" label="বাংগ্লা Bangla/Bengali" src="bn.vtt" srclang="bn"></track>
+  <track id="trk" kind="subtitles" label="മലയാളം Malayalama" src="ml.vtt" srclang="ml"></track>
   Your browser does not support the audio tag.
 </audio>
 
@@ -134,8 +137,9 @@ audio{
     <!-- End Main page layout–––––––––––––––––––– -->
 	<!-- Javascript calls–––––––– -->
     <script type="text/javascript" src="../../../js/common.js?v=2.0"></script>
-<script> 
-	
+<script>
+		var pic=document.getElementById("pic");
+		pic.src="0.png";
 function showfn(obj)
 {
 	$("#pic").fadeOut(400, function() {
@@ -145,8 +149,25 @@ function showfn(obj)
 //document.getElementById("pic").src=obj.src;
 document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
 }
+var curtrk=0;
+var mytrkevt = function(event) {
+  for (i=0;i<event.target.length;i++)
+   if (event.target[i].mode == "showing")
+    {
+     curtrk = i;
+	 break;
+	 }
+	 textTrack = myAudio.textTracks[curtrk];
+	 textTrack.oncuechange = function(e) {
+  var cue = this.activeCues[0];
+  if(cue){
+    lyrics.innerHTML = cue.text;
+  }
+  }
+};
 	var myAudio = document.getElementById('player');
-var textTrack = myAudio.textTracks[0];
+	myAudio.textTracks.onchange = mytrkevt;
+var textTrack = myAudio.textTracks[curtrk];
 var lyrics = document.getElementsByClassName("title")[0];
 // When cue value changes run your code
 textTrack.oncuechange = function(e) {
