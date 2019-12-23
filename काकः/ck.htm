@@ -39,28 +39,8 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="../../../css/navbar.css?v=2.0">
-    <link rel="stylesheet" href="../../../css/secondary-navbar.css?v=2.0">
-    <link rel="stylesheet" href="../../../css/homepage.css?v=2.0">
-    <link rel="stylesheet" href="../../../css/profile.css?v=2.0">
-    <link rel="stylesheet" href="../../../css/archive.css?v=2.0">
-    <link rel="stylesheet" href="../../../css/article.css?v=2.0">
-    <link rel="stylesheet" href="../../../css/form.css?v=2.0">
-    <link rel="stylesheet" href="../../../css/general.css?v=2.0">
-	<link rel="preload" as="image" href="mobile/1.png">
-	<link rel="preload" as="image" href="mobile/2.png">
-	<link rel="preload" as="image" href="mobile/3.png">
-	<link rel="preload" as="image" href="mobile/4.png">
-	<link rel="preload" as="image" href="mobile/5.png">
-	<link rel="preload" as="image" href="mobile/6.png">
-	<link rel="preload" as="image" href="mobile/7.png">
-	<link rel="preload" as="image" href="mobile/8.png">
-		<link rel="preload" as="image" href="mobile/9.png">
-
-    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">    
     <style type="text/css">
-::cue(v[voice="maNDuukaH"]) { color: green;font-weight: bold; }
 .bm { color: green;font-weight: bold; }
 .mainpage .full-width-card h3.author.by:before{
  content: '— ';
@@ -73,9 +53,7 @@
 .mainpage .full-width-card h3.fullText span:not(:first-of-type):last-of-type:before{
  content: ' ,  ';
 }
-
 #lyrics{margin-left:3em;font: 700 2.3em arial,sans-serif;text-align:center;}
-
 .image-wrap {
   width: 100%;
   margin: 0 auto;
@@ -103,7 +81,6 @@ audio{
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Laila:400&amp;subset=devanagari" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Halant:300,400,500,600,700|Martel:200,300,400,600,700,800,900&amp;subset=devanagari" rel="stylesheet">  
-   
 </head>
 <body>
 <div class="container dynamic-page">
@@ -128,7 +105,6 @@ audio{
   <track id="trk" kind="subtitles" label="ગુજરાતી gujaraatii" src="gu.vtt" srclang="gu"></track>
   Your browser does not support the audio tag.
 </audio>
-
 </div>
         </div>
     </div>
@@ -140,23 +116,18 @@ audio{
             </div>
         </div>
     </div>
-    <!-- End Main page layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<!-- Javascript calls
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- End Main page layout ––– -->
+	<!-- Javascript calls ––– -->
     <script type="text/javascript" src="../../../js/common.js?v=2.0"></script>
 <script> 
 		var pic=document.getElementById("pic");
 		pic.src="mobile/0.png";
-	
 function showfn(obj)
 {
 	$("#pic").fadeOut(200, function() {
             $("#pic").attr('src',obj.src);
         })
         .fadeIn(300);
-//document.getElementById("pic").src=obj.src;
-//document.getElementById("illus").innerHTML="Illustration by: "+obj.title;
 }
 	var myAudio = document.getElementById('player');
 var textTrack = myAudio.textTracks[1];
