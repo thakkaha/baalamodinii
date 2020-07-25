@@ -81,7 +81,7 @@
 	<script>
 	var lnk = "";
 	var yrmt = window.location.href.substr(window.location.href.lastIndexOf(".ml")+3,8);
-	$(".title").html(yrmt.replace(/\//g, " ");
+	$(".title").html(yrmt.replace(/\//g, " "));
 	lnk+='https://api.github.com/repos/thakkaha/baalamodinii/contents'+yrmt;
       (async () => {
         const response = await fetch(lnk);
