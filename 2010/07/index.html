@@ -78,10 +78,11 @@
         <div class="col-md-10">
             <div class="row gray-back" id="stories">
 		    <script src="hidefiles.json" type="text/javascript"></script>
+			<script src="../../js/sanscript.js"></script>
 	<script>
 	var lnk = "";
 	var yrmt = window.location.href.substr(window.location.href.lastIndexOf(".ml")+3,8);
-	$(".title").html(yrmt.replace(/\//g, " "));
+	$(".title").html(Sanscript.t(yrmt.replace(/\//g, " "),'devanagari', 'itrans'));
 	lnk+='https://api.github.com/repos/thakkaha/baalamodinii/contents'+yrmt;
       (async () => {
         const response = await fetch(lnk);
