@@ -80,7 +80,9 @@
 		    <script src="hidefiles.json" type="text/javascript"></script>
 	<script>
 	var lnk = "";
-	lnk+='https://api.github.com/repos/thakkaha/baalamodinii/contents'+window.location.href.substr(window.location.href.lastIndexOf(".ml")+3,8);
+	var yrmt = window.location.href.substr(window.location.href.lastIndexOf(".ml")+3,8);
+	$(".title").html(yrmt.replace(/\//g, " ");
+	lnk+='https://api.github.com/repos/thakkaha/baalamodinii/contents'+yrmt;
       (async () => {
         const response = await fetch(lnk);
         const data = await response.json();
