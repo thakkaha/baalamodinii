@@ -35,6 +35,7 @@
         var nav_archive_issue = "सञ्चिका";
     </script>
     <script type="text/javascript">var base_url = "https://sambhashanasandesha.in/";</script>
+	<script src="..\curr.json" type="text/javascript"></script>
     <style type="text/css">
 .mainpage .full-width-card h3.author.by:before{
  content: '— ';
@@ -65,14 +66,14 @@
     <div class="container navbar-head">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h1>सम्भाषण<span class="saffron">सन्देशः</span></h1>
+                <h1>प्रतिदिनं संस्कृतम् <span class="saffron">कथामाला</span> - सम्भाषणसन्देशः</h1>
             </div>
         </div>
     </div>
 <div class="container dynamic-page">
     <div class="row">
         <div class="col-md-12">
-            <a href="../ssbm.html"><h4 class="archiveTitle" style="text-decoration:underline">सङ्ग्रहः</h4></a>
+            <a href="../index.html"><h4 class="archiveTitle" style="text-decoration:underline">सङ्ग्रहः</h4></a>
             <h1 class="title"> २०१०</h1>
         </div>
     </div>
@@ -170,20 +171,20 @@
 	<!-- Javascript calls
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript" src="../js/common.js?v=2.0"></script>
-		<script>
-		  
-	
-	
-	
-	 
-	  
-	
-	  $(".archive-structure-pictorial")[7].style.opacity="0.4";
-      $(".archive-structure-pictorial")[7].style.pointerEvents="none";
-	  $(".archive-structure-pictorial")[8].style.opacity="0.4";
-      $(".archive-structure-pictorial")[8].style.pointerEvents="none";
-	  $(".archive-structure-pictorial")[11].style.opacity="0.4";
-      $(".archive-structure-pictorial")[11].style.pointerEvents="none";
-	</script>
+	<script type="text/javascript">
+	$(".archive-structure-pictorial").hide();
+
+	  var dt = new Date();  
+	  $(".archive-structure-pictorial")[dt.getMonth()].style.display="block";
+	$(".archive-structure-pictorial")[dt.getMonth()].style.opacity="1";
+ 
+	  if (localStorage["jayatu"]==pd[0]){
+	 for (counter=7;counter<=11;counter++)
+	{
+	$(".archive-structure-pictorial")[counter].style.display="block";
+	$(".archive-structure-pictorial")[counter].style.opacity="1";
+	  } 
+	  }
+</script>
 </body>
 </html>
