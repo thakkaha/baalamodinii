@@ -3,22 +3,23 @@
 <head>
 <title>अद्यतनं पञ्चाङ्गम्  ।  adyatanaM pa~nchaa~Ngam </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 </head>
 <body>
 <center>
 <h1>अद्यतनं पञ्चाङ्गम्</h1>
-<h3>द्वाविंशति-अधिक-एकशतोत्तर-पञ्चसहस्रतम-युगाब्दः (कलियुगे <b>५१२२</b>) ।</h3>
+<h3>द्वाविंशति-अधिक-एकशतोत्तर-पञ्चसहस्रतम-युगाब्दः</h3> (कलियुगे <b>५१२२</b>) ।
 <b>शार्वरी</b> नाम संवत्सरः । 
 <br>
 <b>दक्षिणायनम्</b> । 
 <br>
-[<!--वसन्त- / ग्रीष्म- /--> वर्षा- / शरद्- / हेमन्त- <!--/ शिशिर--->] <b>ॠतुः </b> । 
+[<!--वसन्त- / ग्रीष्म- /--> वर्षा- <!--/ शरद्- / हेमन्त- / शिशिर--->] <b>ॠतुः </b> । 
 <br>
-[<!--चैत्रः / वैशाखः / ज्येष्ठः / आषाढः / -->श्रावणः / भाद्रपदः / आश्विनः / कार्तिकः / मार्गशीर्षः / पौषः<!-- / माघः / फाल्गुनः-->] <b>मासः</b> ।
+[<!--चैत्रः / वैशाखः / ज्येष्ठः / आषाढः / -->श्रावणः <!--/ भाद्रपदः / आश्विनः / कार्तिकः / मार्गशीर्षः / पौषः / माघः / फाल्गुनः-->] <b>मासः</b> ।
 <br>
-[ कृष्ण- / शुक्ल- ] <b>पक्षः </b> । 
+<b><span id="pa">शुक्ल-</span></b>पक्षः  । 
 <br>
-_ <b>तिथिः</b> । 
+<span id="ti">_</span> <b>तिथिः</b> । 
 <br>
 _ <b>नक्षत्रम्</b> । 
 <br>
@@ -90,4 +91,40 @@ init();
 </script>
 Learn more about the above animation from https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations
 </body>
+<!--
+https://docs.google.com/spreadsheets/d/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/edit?usp=sharing
+https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A1:D5 -->
+<script>
+var abc=function(json){
+debugger;
+}
+</script>
+<script>
+function transferComplete(evt) {
+var tod = "2020-08-03";
+var d = new Date();
+tod=d.toISOString().substr(0,10); 
+  console.log(tod);
+  for (i=0;i<JSON.parse(this.responseText).values.length;i++)
+    if (JSON.parse(this.responseText).values[i][0] == tod)
+	{
+	   document.getElementById("ti").innerHTML = JSON.parse(this.responseText).values[i][1];
+	      if (JSON.parse(this.responseText).values[i][2] == 1)
+		  {
+		  document.getElementById("pa").innerHTML ="कृष्ण-";
+		  }
+	   }
+ 
+}
+function transferFailed(evt)
+{
+console.log("some err");
+}
+var xhr = new XMLHttpRequest();
+xhr.addEventListener("load", transferComplete);
+xhr.addEventListener("error", transferFailed);
+xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A1:C5?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
+xhr.send();
+</script>
+
 </html>
