@@ -104,9 +104,9 @@ debugger;
 </script>
 <script>
 function transferComplete(evt) {
-var tod = "2020-08-03";
+//var tod = "2020-08-03";
 var d = new Date();
-tod=d.toISOString().substr(0,10); 
+var tod=d.toISOString().substr(0,10); 
   //console.log(tod);
   for (i=0;i<JSON.parse(this.responseText).values.length;i++)
     if (JSON.parse(this.responseText).values[i][0] == tod)
