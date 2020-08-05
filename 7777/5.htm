@@ -98,8 +98,9 @@ Learn more about the above animation from https://developer.mozilla.org/en-US/do
 function transferComplete(evt) {
 //var tod = "2020-08-03";
 var d = new Date();
-var tod=d.toISOString().substr(0,10); 
-  console.log(tod);
+var tod=d.toDateString().substr(4,6); 
+  //console.log(tod);
+  //console.log(this.responseText);
   for (i=0;i<JSON.parse(this.responseText).values.length;i++)
     if (JSON.parse(this.responseText).values[i][0] == tod)
 	{
@@ -120,7 +121,7 @@ console.log("some err");
 var xhr = new XMLHttpRequest();
 xhr.addEventListener("load", transferComplete);
 xhr.addEventListener("error", transferFailed);
-xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A1:C5?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
+xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A2:C33?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
 xhr.send();
 </script>
 </body>
