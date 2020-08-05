@@ -59,9 +59,11 @@ body {
 function transferComplete(evt) {
 //var tod = "2020-08-03";
 var d = new Date();
-var tod=d.toISOString().substr(0,10); 
-var mon=tod.substr(5,2);
-var da=tod.substr(8,2);
+var tod=d.toDateString().substr(4,6); 
+debugger;
+var mon=d.getMonth()+1;
+if (mon<10) mon="0"+mon;
+var da=tod.substr(4,2);
 if (parseInt(da)<10) { da=da.substr(1,1);};
 document.getElementById("gi").src="https://kathaa.ml/9999/"+mon+"/cover.jpg";
 document.getElementById("su").src="https://gq31.gq/img/"+da+".jpg";
@@ -82,7 +84,7 @@ console.log("some err");
 var xhr = new XMLHttpRequest();
 xhr.addEventListener("load", transferComplete);
 xhr.addEventListener("error", transferFailed);
-xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A1:D5?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
+xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A2:D33?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
 xhr.send();
 </script>
 </body>
