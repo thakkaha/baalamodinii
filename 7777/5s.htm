@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>अद्यतनं पञ्चाङ्गम्  ।  adyatanaM pa~nchaa~Ngam </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+</head>
+<body>
+<center>
+<h1>अद्यतनं पञ्चाङ्गम्</h1>
+<h3>द्वाविंशति-अधिक-एकशतोत्तर-पञ्चसहस्रतम-युगाब्दः</h3> (कलियुगे <b>५१२२</b>) ।
+<b>शार्वरी</b> नाम संवत्सरः । 
+<br>
+<b>दक्षिणायनम्</b> । 
+<br>
+<!-- [   वसन्त- / ग्रीष्म- /  वर्षा- / शरद्- / हेमन्त- / शिशिर ] <b>ॠतुः </b> । -->
+<br>
+[<!--चैत्रः / वैशाखः / ज्येष्ठः / आषाढः / -->श्रावणः <!--/ भाद्रपदः / आश्विनः / कार्तिकः / मार्गशीर्षः / पौषः / माघः / फाल्गुनः-->] <b>मासः</b> ।
+<br>
+<b><span id="pa">शुक्ल-</span></b>पक्षः  । 
+<br>
+<b><span id="ti">_</span> </b>तिथिः । 
+<br>
+_ <b>नक्षत्रम्</b> । 
+<br>
+अद्य <b><span id='v'>[ सोम / मङ्गल / बुध / गुरु / शुक्र / शनि / रवि ]</span></b>-वासरः । 
+<h2>अद्यतनं दिनं सर्वेषां कृते शुभं भवेत् । </h2>
+</center>
+<script>
+var va=["रवि ","सोम ","मङ्गल"," बुध"," गुरु"," शुक्र"," शनि "];
+var d = new Date();
+  var n = d.getDay();
+  document.getElementById("v").innerHTML = va[n];
+  </script>
+<p> NOTE: Above is suggestive only (for Samskritam shravan/abhyaasa) - There could be variations/corrections. Please consult expert for actual muhurat/etc purposes :-)
+</p>
+<script>
+function transferComplete(evt) {
+//var tod = "2020-08-03";
+var d = new Date();
+var tod=d.toDateString().substr(4,6); 
+  //console.log(tod);
+  //console.log(this.responseText);
+  for (i=0;i<JSON.parse(this.responseText).values.length;i++)
+    if (JSON.parse(this.responseText).values[i][0] == tod)
+	{
+	   document.getElementById("ti").innerHTML = JSON.parse(this.responseText).values[i][1];
+	      if (JSON.parse(this.responseText).values[i][2] == 1)
+		  {
+		  document.getElementById("pa").innerHTML ="कृष्ण-";
+		  }
+		  break;
+		  i=JSON.parse(this.responseText).values.length;
+	   }
+}
+function transferFailed(evt)
+{
+console.log("some err");
+}
+var xhr = new XMLHttpRequest();
+xhr.addEventListener("load", transferComplete);
+xhr.addEventListener("error", transferFailed);
+xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A2:C33?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
+xhr.send();
+</script>
+</body>
+</html>
