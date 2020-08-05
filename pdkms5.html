@@ -5,8 +5,7 @@
 <title>प्रतिदिनं संस्कृतम् - कथामाला </title>
 <style>
 body {
- 
-  'background-image: url('gaja.jpg');
+ background-image: url('js.jpg');
 }
 .step {
     position: relative;
@@ -41,17 +40,24 @@ body {
 </head>
 <body>
 <div id="impress">
-<div class="step slide" data-x="-400" data-y="-300" data-rotate="0" data-scale="0.809375"><q>प्रतिदिनं संस्कृतम् - कथामाला </q><img src="pdkm-v8.jpg" height="100%"></div>
+
+<div class="step slide" data-x="-400" data-y="-300" data-rotate="0" data-scale="0.809375"><q>प्रतिदिनं संस्कृतम् - कथामाला </q><img src="info7.jpg" height="100%"></div>
+
 <div class="step slide" data-x="525" data-y="-299" data-rotate="0" data-scale="1">ध्येय-मन्त्राः<img src="https://kathaa.ml/8888/d.png" height="100%"></div>
-<div class="step slide" data-x="62" data-y="501" data-rotate="60" data-scale="1">गीतम् <img id='gi' src="" height="100%"></div>
-<div class="step slide" data-x="-862" data-y="501" data-rotate="120" data-scale="1">सुभाषितम् <img id='su' src="" height="100%"></div>
-<div class="step slide" data-x="-1325" data-y="-300" data-rotate="180" data-scale="1"><iframe height="100%" width="100%" src="https://kathaa.ml/7777/5.htm"></iframe></div>
-<div class="step slide" data-x="-862" data-y="-1101" data-rotate="240" data-scale="1"><img id='ka' src="" height="100%"></div>
+
+<div class="step slide" data-x="62" data-y="501" data-rotate="60" data-scale="1"><iframe height="100%" width="100%" src="https://kathaa.ml/7777/5.htm"></iframe></div>
+
+<div class="step slide" data-x="-862" data-y="501" data-rotate="120" data-scale="1"><a id="gia" target="_blank">गीतम्</a><img id='gi' src="" height="100%"></div>
+
+<div class="step slide" data-x="-1325" data-y="-300" data-rotate="180" data-scale="1"><a id="kaa" target="_blank"><img id='ka' src="" height="100%"></a></div>
+
+<div class="step slide" data-x="-862" data-y="-1101" data-rotate="240" data-scale="1"><a href="https://gq31.gq" target="_blank"</a>सुभाषितम् <img id='su' src="" height="100%"></div>
 
 <div class="step slide credits" data-x="62" data-y="-1101" data-rotate="300" data-scale="1">
     शान्ति-मन्त्रः<img src="https://kathaa.ml/8888/s.png" width="100%">
   </div>
 <div class="step" data-x="0" data-y="0" data-scale="5"></div>
+
 </div>
 <script src="impress.js"></script>
 <script>impress().init()</script>
@@ -60,18 +66,19 @@ function transferComplete(evt) {
 //var tod = "2020-08-03";
 var d = new Date();
 var tod=d.toDateString().substr(4,6); 
-debugger;
 var mon=d.getMonth()+1;
 if (mon<10) mon="0"+mon;
 var da=tod.substr(4,2);
 if (parseInt(da)<10) { da=da.substr(1,1);};
 document.getElementById("gi").src="https://kathaa.ml/9999/"+mon+"/cover.jpg";
+document.getElementById("gia").href="https://kathaa.ml/9999/"+mon+"/cover.jpg";
 document.getElementById("su").src="https://gq31.gq/img/"+da+".jpg";
   //console.log(tod);
   for (i=0;i<JSON.parse(this.responseText).values.length;i++)
     if (JSON.parse(this.responseText).values[i][0] == tod)
 	{
 	   document.getElementById("ka").src = JSON.parse(this.responseText).values[i][3];
+	   document.getElementById("kaa").href = JSON.parse(this.responseText).values[i][3];
 		  break;
 		  i=JSON.parse(this.responseText).values.length;
 	   }
