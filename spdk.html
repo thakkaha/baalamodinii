@@ -32,7 +32,7 @@
 <h1><span class="saffron" style="color:rgb(251, 140, 0)">कथामाला</span></h1>
 </div></div>
 <div class="sl-block" data-block-type="image" data-name="image-0cb4b5" data-block-id="7ed16e5bbdbd84b05454ae1e46a00964" style="width: 299.733px; height: 388.092px; left: 330.134px; top: 238.908px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;">
-<h3><span id="tod"></span>, 2020</h3>
+<h3><span id="tod" onclick="newtod()"></span>, 2020</h3>
 <!-- hht made img none below -->
 <img style="display:none" data-natural-width="1479" data-natural-height="1915" data-lazy-loaded="" data-src="https://kathaa.ml/info7.jpg">
 </div></div></section><section data-id="c8f8bec46ab4b05d7983cfb922025386"><div class="sl-block" data-block-type="text" style="width: 807px; left: 76.9995px; top: 26.7022px; height: auto;" data-block-id="75f02c5e20653ed05f59a14031befb80"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -153,6 +153,14 @@ Hr.registerLanguage("irpf90",Co),Hr.registerLanguage("isbl",Ro),Hr.registerLangu
 				plugins: [ RevealHighlight ]
 			});
 //hht
+function newtod()
+{
+tod=prompt("Mon DD?");
+da=tod.substr(4,2);
+document.getElementById("tod").innerHTML=tod;
+xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A2:D33?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
+xhr.send();
+}
 var kasrc="";
 var d = new Date();
 var tod=d.toDateString().substr(4,6); 
