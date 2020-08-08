@@ -52,7 +52,7 @@
 </div>
 <div class="sl-block" data-block-type="text" data-name="text-3084b1" data-block-id="c6f19de96ec4e0e8ea9c953afe108bed" style="height: auto; width: 600px; left: 178.25px; top: 591px;">
     <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
-        <p><span style="font-size:0.9em">NOTE: These change by time and location</span></p>
+        <p><span id="note" style="font-size:0.9em">NOTE: These change by time and location - </span></p>
     </div>
 </div>
 </section>
@@ -163,7 +163,7 @@ var da=tod.substr(4,2);
 var va=["रवि ","सोम ","मङ्गल"," बुध"," गुरु"," शुक्र"," शनि "];
   var n = d.getDay();
   document.getElementById("v").innerHTML = va[n];
-
+document.getElementById("note").innerHTML += d.toDateString().substr(4);
 
 if (parseInt(da)<10) { da=da.substr(1,1);};
 function transferComplete(evt) {
