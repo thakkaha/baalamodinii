@@ -218,7 +218,8 @@ function transferComplete(evt) {
 	   //console.log("kasrc"+kasrc);
 	   
 	   document.getElementById("ti").innerHTML = JSON.parse(this.responseText).values[i][1];
-	      if (JSON.parse(this.responseText).values[i][2] == 1)
+	   //console.log(JSON.parse(this.responseText).values[i][2]);
+	      if (JSON.parse(this.responseText).values[i][2] == "1")
 		  {
 		  document.getElementById("pa").innerHTML ="कृष्ण";
 		  }
