@@ -193,6 +193,17 @@ function newtod()
 {
 tod=prompt("Mon DD?");
 da=tod.substr(4,2);
+switch(tod.substr(0,3))
+{
+case "Sep" : mon = "09";
+ break;
+case "Oct" : mon = "10";
+ break;
+case "Nov" : mon = "11";
+ break;
+case "Dec" : mon = "12";
+ break;
+}
 if (parseInt(da)<10) { da=da.substr(1,1);};
 n = new Date(tod+",2020").getDay();
   document.getElementById("v").innerHTML = va[n];
