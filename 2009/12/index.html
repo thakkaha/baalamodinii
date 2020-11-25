@@ -29,12 +29,7 @@
     <link rel="stylesheet" href="../../css/article.css?v=2.0">
     <link rel="stylesheet" href="../../css/form.css?v=2.0">
     <link rel="stylesheet" href="../../css/general.css?v=2.0">
-    <script type="text/javascript">
-        var base_url = "https://sambhashanasandesha.in/";
-        var nav_archive_volume = "सम्पुटः";
-        var nav_archive_issue = "सञ्चिका";
-    </script>
-    <script type="text/javascript">var base_url = "https://sambhashanasandesha.in/";</script>
+
     <style type="text/css">
 .mainpage .full-width-card h3.author.by:before{
  content: '— ';
@@ -74,7 +69,7 @@
     <div class="row">
         <div class="col-md-12">
             <a href="../ssbmy.html"><h4 class="archiveTitle" style="text-decoration:underline">सङ्ग्रहः</h4></a>
-            <h1 class="title"> २००९-१२</h1>
+            <h1 class="title"> yr-mth</h1>
         </div>
     </div>
 </div>
@@ -82,15 +77,20 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="row gray-back" id="stories">
-
+		    <script src="hidefiles.json" type="text/javascript"></script>
+			<script src="../../js/sanscript.js"></script>
 	<script>
+	var lnk = "";
+	var yrmt = window.location.href.substr(window.location.href.lastIndexOf(".ml")+3,8);
+	$(".title").html(Sanscript.t(yrmt.replace(/\//g, " "), 'itrans','devanagari'));
+	lnk+='https://api.github.com/repos/thakkaha/baalamodinii/contents'+yrmt;
       (async () => {
-        const response = await fetch('https://api.github.com/repos/thakkaha/baalamodinii/contents/2009/12');
+        const response = await fetch(lnk);
         const data = await response.json();
         let htmlString = '';
         for (let file of data) {
-          if(file.name !== "index.html" && file.name !== "cover.jpg"){
-            htmlString += `<a href="${file.name}" class="col-6 col-md-2 archive-structure-pictorial" title="${file.html_url}"><div class="card sanskrit-english"><img class="img-fluid" src="cover.jpg" alt="Cover page" /><p>${file.html_url}</p></div></a>`;
+          if(!hiddenfiles.includes(file.name)){
+            htmlString += `<a href="${file.name}" class="col-6 col-md-2 archive-structure-pictorial" title="${file.html_url}"><div class="card sanskrit-english"><img class="img-fluid" src="${file.name}.png" alt="${file.name}" /><p>${file.name}</p></div></a>`;
           }
         }
         document.getElementById('stories').innerHTML += htmlString;
@@ -104,7 +104,7 @@
     <div class="container footer"><!-- container -->
         <div class="row justify-content-center"><!-- row -->
             <div class="col-md text-center">
-                <p><small>© 2019 Sambhashana Sandesha, All Rights Reserved<!--  | Design, Developed and Maintained by <a href="https://srirangadigital.com/">Sriranga Digital --></small></p>
+                <p><small>© 2020 Sambhashana Sandesha, All Rights Reserved</small></p>
             </div>
         </div>
     </div>
