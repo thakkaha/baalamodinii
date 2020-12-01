@@ -89,10 +89,13 @@ hht end-of-ad-slide -->
 <img id="gi" data-natural-width="584" data-natural-height="800" style="" data-lazy-loaded="" data-src=""></a></div></section>
 
 <section data-id="caa878efb2dc4c40341dc29d59a7e132" data-state="su"><div class="sl-block" data-block-type="text" style="width: 807px; left: 76.5px; top: 22.8778px; height: auto;" data-block-id="59698c140c7079b80572724d8e915f57"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-<h2><span><strong>सुभाषितम्</strong></span></h2>
+<h2><span><a id="sua" target="_blank">सुभाषितम्</a></span></h2>
 </div></div>
+<div class="sl-block" data-block-type="iframe" data-name="iframe-12d909" data-block-id="12fba82d8524b85bf1ab2e2601980d00" style="width: 779.875px; height: 597.031px; left: 90.0625px; top: 88.3506px;"><div class="sl-block-content" style="z-index: 12;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" xdata-src="https://gq120.gq" id="su"></iframe></div></div>
+<!--
 <div class="sl-block" data-block-type="image" style="width: 778.667px; height: 584px; left: 90.6665px; top: 103.252px; min-width: 1px; min-height: 1px;" data-block-id="e96db6b44bb966407e0025e3e0957278"><a class="sl-block-content" style="z-index: 11;" href="http://gq31.gq/" target="_blank">
-<img id="su" data-natural-width="1024" data-natural-height="768" style="" data-lazy-loaded="" data-src=""></a></div></section>
+<img id="su" data-natural-width="1024" data-natural-height="768" style="" data-lazy-loaded="" data-src=""></a></div>
+--></section>
 
 <section data-state="ka" data-id="ab0d3aee9d395d0abae4a92964bc0c43"><div class="sl-block" data-block-type="image" style="width: 711.612px; height: 920.91px; left: 124.194px; top: -110.455px; min-width: 1px; min-height: 1px;" data-block-id="6c0977e7d7ece6e7f8edf239d483154c"><div class="sl-block-content" style="z-index: 10;">
 <a id="kaa" class="sl-block-content" style="z-index: 11;" href="" target="_blank">
@@ -202,6 +205,8 @@ function newtod()
 {
 tod=prompt("Mon DD?");
 da=tod.substr(4,2);
+document.getElementById("su").src="https://gq120.gq/?s="+da;
+document.getElementById("sua").href="https://gq120.gq/?s="+da;
 switch(tod.substr(0,3))
 {
 case "Sep" : mon = "09";
@@ -227,6 +232,8 @@ var tod=d.toDateString().substr(4,6);
 var mon=d.getMonth()+1;
 if (mon<10) mon="0"+mon;
 var da=tod.substr(4,2);
+document.getElementById("su").src="https://gq120.gq/?s="+da;
+document.getElementById("sua").href="https://gq120.gq/?s="+da;
 var va=["रवि ","सोम ","मङ्गल"," बुध"," गुरु"," शुक्र"," शनि "];
   var n = d.getDay();
   document.getElementById("v").innerHTML = va[n];
@@ -266,7 +273,8 @@ document.getElementById("gia").href="https://kathaa.ml/9999/"+mon+"/";
   //console.log(mon+'✨');
 } );
 Reveal.on( 'su', () => {
-document.getElementById("su").src="http://gq31.gq/img/"+da+".jpg";
+document.getElementById("su").src="https://gq120.gq/?s="+da;
+document.getElementById("sua").href="https://gq120.gq/?s="+da;
 } );
 Reveal.on( 'ka', () => {
 document.getElementById("ka").src=kasrc;
