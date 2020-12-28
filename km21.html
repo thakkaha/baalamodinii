@@ -22,12 +22,13 @@
 		<meta name="csrf-param" content="authenticity_token" />
 <meta name="csrf-token" content="curZ4RxEe9AzQf4TM2mPnJvU/uCln5jdcan5/wFTNhHVMahVSZty8HiPPbY8PyxMb0nvrycZbqFUaNdFRVnazA==" />
 		<style id="user-css-output" type="text/css"></style>
+		<script src="curr.json" type="text/javascript"></script>
 	</head>
 	<body class="reveal-viewport theme-font-montserrat theme-color-white-blue"">
 		<div class="reveal">
 			<div class="slides">
 				<section data-id="d0917d50dae07a0d9835a3e9de36168f"><div class="sl-block" data-block-type="text" style="width: 807px; left: 76.5005px; top: 13px; height: auto;" data-block-id="989a6c42bd020e3b2ba079dea1cacd3d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
-<h1><span class="saffron" style="color:rgb(251, 140, 0)">कथामाला - २०२१ </span></h1><h3>http://kathaa.sbusa.org/</h3>
+<h1><span class="saffron" style="color:rgb(251, 140, 0)" onclick="localStorage['2021']=prompt('किम्?');">कथामाला - २०२१ </span></h1><h3 >http://kathaa.sbusa.org/</h3>
 </div></div>
 <div class="sl-block" data-block-type="image" data-name="image-0cb4b5" data-block-id="7ed16e5bbdbd84b05454ae1e46a00964" style="width: 499.733px; height: 388.092px; left: 330.134px; top: 238.908px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;">
 <h4><span id="tod" onclick="newtod()"></span>, 2021 <span style="color:rgb(0, 0, 0)">अद्य</span><span style="color:rgb(0, 0, 0); font-size:medium">&nbsp;</span><strong><span id="v">?</span></strong>-वासरः ।</h4>
@@ -208,6 +209,10 @@ Hr.registerLanguage("irpf90",Co),Hr.registerLanguage("isbl",Ro),Hr.registerLangu
 
 				plugins: [ RevealHighlight ]
 			});
+			if (localStorage["2021"]==pd[0]) { document.getElementsByTagName("section")[3].style.visibility="visible";
+			document.getElementsByTagName("section")[2].style.visibility="visible";}
+			else { document.getElementsByTagName("section")[3].style.visibility="hidden";
+			document.getElementsByTagName("section")[2].style.visibility="hidden";}
 //hht
 function newtod()
 {
@@ -280,8 +285,5 @@ document.getElementById("kaa").href=kasrc;
 //console.log(kasrc);
 } );
 		</script>
-
-		
-
 	</body>
 </html>
