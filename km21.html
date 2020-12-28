@@ -215,19 +215,9 @@ tod=prompt("Mon DD?");
 da=tod.substr(4,2);
 document.getElementById("su").src="https://gq120.gq/?v=0&s="+da;
 document.getElementById("sua").href="https://gq120.gq/?v=0&s="+da;
-switch(tod.substr(0,3))
-{
-case "Sep" : mon = "09";
- break;
-case "Oct" : mon = "10";
- break;
-case "Nov" : mon = "11";
- break;
-case "Dec" : mon = "12";
- break;
-}
+
 if (parseInt(da)<10) { da=da.substr(1,1);};
-n = new Date(tod+",2020").getDay();
+n = new Date(tod+",2021").getDay();
   document.getElementById("v").innerHTML = va[n];
 document.getElementById("tod").innerHTML=tod;
 //document.getElementById("note").innerHTML ="NOTE: These change by time and location - "+ tod + ", 2020";
@@ -237,8 +227,7 @@ xhr.send();
 var kasrc="";
 var d = new Date();
 var tod=d.toDateString().substr(4,6); 
-var mon=d.getMonth()+1;
-if (mon<10) mon="0"+mon;
+
 var da=tod.substr(4,2);
 document.getElementById("su").src="https://gq120.gq/?v=0&s="+da;
 document.getElementById("sua").href="https://gq120.gq/?v=0&s="+da;
@@ -280,11 +269,7 @@ xhr.addEventListener("load", transferComplete);
 xhr.addEventListener("error", transferFailed);
 xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/Sheet1!A2:D33?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
 xhr.send();
-			Reveal.on( 'gi', () => {
-document.getElementById("gi").src="https://kathaa.ml/9999/"+mon+"/cover.jpg";
-document.getElementById("gia").href="https://kathaa.ml/9999/"+mon+"/";
-  //console.log(mon+'✨');
-} );
+			
 Reveal.on( 'su', () => {
 document.getElementById("su").src="https://gq120.gq/?v=0&s="+da;
 document.getElementById("sua").href="https://gq120.gq/?v=0&s="+da;
