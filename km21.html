@@ -167,6 +167,7 @@ tod=prompt("Mon DD?");
 da=tod.substr(4,2);
 //sunum=(new Date(tod+", 2021").getMonth()*30+parseInt(da))%61;
 sunum=new Date(tod+", 2021").getDOY();
+if (sunum>120) sunum=sunum%120;
 document.getElementById("su").src="https://gq120.gq/?v=0&s="+sunum;
 document.getElementById("sua").href="https://gq120.gq/?v=0&s="+sunum;
 
@@ -185,6 +186,7 @@ var tod=d.toDateString().substr(4,6);
 var da=tod.substr(4,2);
 //sunum=(d.getMonth()*30+parseInt(da))%61;
 sunum=d.getDOY();
+if (sunum>120) sunum=sunum%120;
 document.getElementById("su").src="https://gq120.gq/?v=0&s="+sunum;
 document.getElementById("sua").href="https://gq120.gq/?v=0&s="+sunum;
 var va=["रवि ","सोम ","मङ्गल"," बुध"," गुरु"," शुक्र"," शनि "];
