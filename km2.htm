@@ -16,14 +16,14 @@
 <h1><span class="saffron" style="color:rgb(251, 140, 0)" onclick="localStorage['2022']=prompt('किम्?');">कथामाला - २०२२ </span></h1><h3 >http://kathaa.sbusa.org/</h3>
 </div></div>
 <div class="sl-block" data-block-type="image" data-name="image-0cb4b5" data-block-id="7ed16e5bbdbd84b05454ae1e46a00964" style="width: 499.733px; height: 388.092px; left: 330.134px; top: 238.908px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;">
-<h4><span id="tod" ></span>, 2022 <span onclick="nextod()" style="color:tomato;cursor:pointer;text-decoration: underline overline"> >> </span><span style="color:rgb(0, 0, 0); font-size:medium"> &nbsp;</span><strong><span id="v">?</span></strong>-वासरः ।</h4>
+<h4><span onclick="pretod()" style="color:blue;cursor:pointer;text-decoration: underline"> &lt;&lt; </span><span id="tod" ></span>, 2022 <span onclick="nextod()" style="color:tomato;cursor:pointer;text-decoration: underline overline"> >> </span><span style="color:rgb(0, 0, 0); font-size:medium"> &nbsp;</span><strong><span id="v">?</span></strong>-वासरः ।</h4>
 
 <!-- hht made img none below -->
 <!--<img style="display:none" data-natural-width="1479" data-natural-height="1915" data-lazy-loaded="" data-src="https://kathaa.ml/info7.jpg">-->
 <ul>
 <!--<li>These sessions maybe recorded</li>
 <li><span style="color:rgb(251, 108, 11)">कृपया Please MUTE when NOT speaking!</span></li> 🕉️ 🚩 प्रतिदिनं "रामायणपारायणम्" अपि भविष्यति -->
-<li><span style="color:rgb(00, 00, 255)">ॐ  🙏 from 23rd Aug </span></li>
+<!--<li><span style="color:rgb(00, 00, 255)">ॐ  🙏 from 23rd Aug </span></li>-->
 <li>7:30 pm Singapore time<br>7:30 pm British time<br>9:30 pm Eastern (US/Canada) time<br><strong>same kathaa/subhaashitam - 3 times daily!</strong> </li>
 <!--<li><span style="color:rgb(255, 00, 00)">कथामाला-आधारेण प्रश्नावली ✔️ - https://t.me/kathaaH on FREE Telegram App (JOIN!)</span></li>-->
 <!--<li>for Singapore - 7:30pm (same as in 2020)</li>-->
@@ -104,15 +104,38 @@ typo/error? - email (with num) - <strong>pratidinam@sbusa.org</strong></section>
 			else { document.getElementsByTagName("section")[3].style.visibility="hidden";
 			document.getElementsByTagName("section")[2].style.visibility="hidden";}
 //hht
+function pretod()
+{
+prevtod = new Date(tod+", "+new Date().getFullYear());
+prevtod = new Date(prevtod.getFullYear(),prevtod.getMonth(),prevtod.getDate()-1);
+tod=prevtod.toString().substr(4,3) + prevtod.toString().substr(7,3);
+
+sunum=prevtod.getDOY();
+if (sunum>120) sunum=sunum%120;
+document.getElementById("su").src="https://gq120.gq/?v=0&s="+sunum;
+document.getElementById("sua").href="https://gq120.gq/?v=0&s="+sunum;
+n = prevtod.getDay();
+  document.getElementById("v").innerHTML = va[n];
+document.getElementById("tod").innerHTML=tod;
+xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/2022!A2:D33?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
+xhr.send();
+}
 function nextod()
 {
+//debugger;
 //tod=prompt("Mon DD?");
-mo=tod.substr(0,3);
-da=tod.substr(4,2);
-if (parseInt(da)<10) { da=da.substr(1,1);};
-if (!isNaN(new Date(mo+" "+parseInt(parseInt(da)+1)+", 2022").valueOf())){
-tod=mo+" "+parseInt(parseInt(da)+1);
-newtod=new Date(tod+", 2022");
+
+///mo=tod.substr(0,3);
+///da=tod.substr(4,2);
+///if (parseInt(da)<10) { da=da.substr(1,1);};
+///if (!isNaN(new Date(mo+" "+parseInt(parseInt(da)+1)+", 2022").valueOf())){
+///tod=mo+" "+parseInt(parseInt(da)+1);
+///newtod=new Date(tod+", 2022");
+
+newtod = new Date(tod+", "+new Date().getFullYear());
+newtod = new Date(newtod.getFullYear(),newtod.getMonth(),newtod.getDate()+1);
+tod=newtod.toString().substr(4,3) + newtod.toString().substr(7,3);
+
 sunum=newtod.getDOY();
 if (sunum>120) sunum=sunum%120;
 document.getElementById("su").src="https://gq120.gq/?v=0&s="+sunum;
@@ -122,7 +145,7 @@ n = newtod.getDay();
 document.getElementById("tod").innerHTML=tod;
 xhr.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1rEH5doqvHzRsVxHrxXLIKy7BmWQOjUx61VGvUhsXXbM/values/2022!A2:D33?key=AIzaSyAhoNyaVgizrYo7fOfSNh8a7nj0DyJtg9M');
 xhr.send();
-}
+///}
 }
 var kasrc="";
 var d = new Date();
