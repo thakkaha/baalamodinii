@@ -83,7 +83,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="row gray-back">
-                            <iframe height="700px" width="100%" allowfullscreen="true" style="border:none; width: 100% !important; position: static;display: block !important; margin: 0 !important;" name="sanskritbharatiusa-pa2013" src=""></iframe>
+                            <iframe height="700px" width="100%" allowfullscreen="true" style="border:none; width: 100% !important; position: static;display: block !important; margin: 0 !important;" name="sanskritbharatiusa" src=""></iframe>
                             
                         </div>
         </div>
@@ -102,10 +102,12 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript" src="../js/common.js?v=2.0"></script>
 	<script type="text/javascript">
+	if (localStorage["jayatu"]==pd[0]){
 	var srcarr=[];
 	var yr=/year=(\w+)/.exec(window.location.href)[1];
 		$("h1.title")[0].innerHTML=Sanscript.t(yr,'itrans','devanagari');
 	$(".archive-structure-pictorial").hide();
+		srcarr["2010"]="sanskritbharatiusa-pa2010";
 		srcarr["2011"]="sanskritbharatiusa-pa2011";
 		srcarr["2012"]="sanskritbharatiusa-pa2012";
 	srcarr["2013"]="sanskritbharatiusa-pa2013";
@@ -120,6 +122,7 @@
 		srcarr["2022"]="sanskritbharatiusa-pa2022";
 	srcarr["0000"]="sanskritbharatiusa";
 	$("iframe")[0].src="https://amuselabs.com/pmm/date-picker?set="+srcarr[yr]+"&embed=1";
+	}
 </script>
 </body>
 </html>
